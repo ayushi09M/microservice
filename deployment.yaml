@@ -1,0 +1,45 @@
+---
+apiVersion: "apps/v1"
+#kind: "Deployment"
+kind: StatefulSet
+metadata:
+  name: "transactionservice"
+  namespace: "microverse"
+  labels:
+    app: "transactionservice"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "transactionservice"
+  template:
+    metadata:
+      labels:
+        app: "transactionservice"
+    spec:
+      containers:
+        - name: "transactionservice-1"
+          image: "gcr.io/gcp-rtb-429519/transactionservice:latest"
+          ports:
+            - containerPort: 8083
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "transactionservice-svc"
+  namespace: "microverse"
+spec:
+  #type: "ClusterIP"
+  type: "NodePort"
+  # Uncomment the below line to create a Headless Service
+  # clusterIP: None
+  selector:
+    app: "transactionservice"
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 8083
+      nodePort: 30063
