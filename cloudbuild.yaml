@@ -1,0 +1,16 @@
+steps:
+  - name: maven:3.6.0-jdk-11-slim
+    entrypoint: 'mvn'
+    args: ['clean', 'install', '-DskipTests']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/transactionservice', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/transactionservice']
+    # deploy container image to GKE
+  - name: 'gcr.io/cloud-builders/gke-deploy'
+    args:
+      - run
+      - --filename=deployment.yaml
+      - --image=gcr.io/$PROJECT_ID/transactionservice
+      - --location=${_CLOUDSDK_COMPUTE_ZONE}
+      - --cluster=${_CLOUDSDK_CONTAINER_CLUSTER}
