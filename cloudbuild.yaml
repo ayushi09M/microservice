@@ -20,5 +20,4 @@ timeout: '1200s' # Adjust as needed
 logsBucket: 'gs://rtb-cloud-build' # Specify your logs bucket here
 
 options:
-  logging: CLOUD_LOGGING_ONLY # Or NONE
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
