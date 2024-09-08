@@ -1,25 +1,23 @@
----
 apiVersion: "apps/v1"
-#kind: "Deployment"
 kind: StatefulSet
 metadata:
-  name: "transactionservice"
-  namespace: "microverse"
+  name: "paymentservice"
+  namespace: "rtb"
   labels:
-    app: "transactionservice"
+    app: "paymentservice"
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: "transactionservice"
+      app: "paymentservice"
   template:
     metadata:
       labels:
-        app: "transactionservice"
+        app: "paymentservice"
     spec:
       containers:
-        - name: "transactionservice-1"
-          image: "gcr.io/gcp-rtb-429519/transactionservice:latest"
+        - name: "paymentservice-1"
+          image: "gcr.io/gcp-rtb-429519/paymentservice:latest"
           ports:
             - containerPort: 8083
           env:
@@ -29,15 +27,13 @@ spec:
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "transactionservice-svc"
-  namespace: "microverse"
+  name: "paymentservice-svc"
+  namespace: "rtb"
 spec:
   #type: "ClusterIP"
   type: "NodePort"
-  # Uncomment the below line to create a Headless Service
-  # clusterIP: None
   selector:
-    app: "transactionservice"
+    app: "paymentservice"
   ports:
     - protocol: "TCP"
       port: 80

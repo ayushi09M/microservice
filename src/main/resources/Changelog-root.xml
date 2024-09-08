@@ -9,8 +9,8 @@
 
 
 
-       <include file="db/create_transaction_table.sql"/>
-       <include file="db/insert_transactions_able.sql"/>
+       <include file="db/create_payment_table.sql"/>
+       <include file="db/insert_payment_table.sql"/>
 <!--    <include file="db/create_leads_table.sql"/>-->
 <!--    <include file="db/create_customer_table.sql"/>-->
 </databaseChangeLog>

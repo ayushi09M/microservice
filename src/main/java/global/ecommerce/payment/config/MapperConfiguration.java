@@ -1,4 +1,4 @@
-package com.microservice.transactionService.config;
+package global.ecommerce.payment.config;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
