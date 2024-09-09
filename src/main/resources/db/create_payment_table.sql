@@ -1,7 +1,0 @@
-CREATE TABLE Payment (
-    id BIGINT NOT NULL AUTO_INCREMENT,
-    orderId VARCHAR(255) NOT NULL,
-    paymentStatus VARCHAR(50) NOT NULL,
-    amount DECIMAL(10, 2) NOT NULL,
-    PRIMARY KEY (id)
-);

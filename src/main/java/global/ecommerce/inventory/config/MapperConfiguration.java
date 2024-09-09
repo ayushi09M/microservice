@@ -1,4 +1,4 @@
-package global.ecommerce.payment.config;
+package global.ecommerce.inventory.config;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;

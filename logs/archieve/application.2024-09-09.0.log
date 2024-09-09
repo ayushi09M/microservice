@@ -1,0 +1,125 @@
+2024-09-09 21:21:41 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-09 21:21:41 - HikariPool-1 - Shutdown initiated...
+2024-09-09 21:21:41 - HikariPool-1 - Shutdown completed.
+2024-09-09 21:21:45 - Starting ProductServiceApplication using Java 20.0.2 on Ayushi with PID 15564 (D:\Ayushi\Learnings\RTB1\Inventory-Management\target\classes started by Ayushi in D:\Ayushi\Learnings\RTB1\Inventory-Management)
+2024-09-09 21:21:45 - The following 1 profile is active: "dev"
+2024-09-09 21:21:45 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-09 21:21:45 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-09 21:21:47 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-09 21:21:47 - Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
+2024-09-09 21:21:48 - BeanFactory id=40261c6e-473d-3c55-88b9-15d490ae7a9d
+2024-09-09 21:21:49 - Tomcat initialized with port(s): 8081 (http)
+2024-09-09 21:21:49 - Starting service [Tomcat]
+2024-09-09 21:21:49 - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2024-09-09 21:21:49 - Initializing Spring embedded WebApplicationContext
+2024-09-09 21:21:49 - Root WebApplicationContext: initialization completed in 3611 ms
+2024-09-09 21:21:49 - HikariPool-1 - Starting...
+2024-09-09 21:21:49 - HikariPool-1 - Start completed.
+2024-09-09 21:21:49 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-09-09 21:21:50 - Set default schema name to PUBLIC
+2024-09-09 21:21:50 - Successfully acquired change log lock
+2024-09-09 21:21:51 - Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2024-09-09 21:21:51 - Reading from PUBLIC.DATABASECHANGELOG
+2024-09-09 21:21:51 - Custom SQL executed
+2024-09-09 21:21:51 - ChangeSet db/create_product_table.sql::raw::includeAll ran successfully in 20ms
+2024-09-09 21:21:51 - Custom SQL executed
+2024-09-09 21:21:51 - ChangeSet db/insert_product_table.sql::raw::includeAll ran successfully in 7ms
+2024-09-09 21:21:51 - Successfully released change log lock
+2024-09-09 21:21:51 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-09 21:21:51 - HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-09-09 21:21:52 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-09-09 21:21:52 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2024-09-09 21:21:53 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-09-09 21:21:53 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-09 21:21:53 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-09 21:21:53 - LiveReload server is running on port 35729
+2024-09-09 21:21:55 - Tomcat started on port(s): 8081 (http) with context path ''
+2024-09-09 21:21:55 - Tomcat initialized with port(s): 9000 (http)
+2024-09-09 21:21:55 - Starting service [Tomcat]
+2024-09-09 21:21:55 - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2024-09-09 21:21:55 - Initializing Spring embedded WebApplicationContext
+2024-09-09 21:21:55 - Root WebApplicationContext: initialization completed in 201 ms
+2024-09-09 21:21:55 - Exposing 17 endpoint(s) beneath base path '/actuator'
+2024-09-09 21:21:56 - Tomcat started on port(s): 9000 (http) with context path ''
+2024-09-09 21:21:56 - Started ProductServiceApplication in 11.79 seconds (JVM running for 13.124)
+2024-09-09 21:22:03 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-09 21:22:03 - Initializing Servlet 'dispatcherServlet'
+2024-09-09 21:22:03 - Completed initialization in 2 ms
+2024-09-09 21:22:03 - Received request to get product with name: Laptop
+2024-09-09 21:22:03 - Fetching product with name: Laptop
+2024-09-09 21:22:10 - Received request to add product: Product(id=null, name=Keyboard, quantity=100)
+2024-09-09 21:22:10 - Saving product: Product(id=null, name=Keyboard, quantity=100)
+2024-09-09 21:22:15 - Received request to update product: Laptop with quantity: 200
+2024-09-09 21:22:15 - Updating quantity of product: Laptop to 200
+2024-09-09 21:22:20 - Received request to get product with name: Laptop
+2024-09-09 21:22:20 - Fetching product with name: Laptop
+2024-09-09 21:25:04 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-09 21:25:04 - HikariPool-1 - Shutdown initiated...
+2024-09-09 21:25:04 - HikariPool-1 - Shutdown completed.
+2024-09-09 21:25:13 - Starting ProductServiceApplication using Java 20.0.2 on Ayushi with PID 24148 (D:\Ayushi\Learnings\RTB1\Inventory-Management\target\classes started by Ayushi in D:\Ayushi\Learnings\RTB1\Inventory-Management)
+2024-09-09 21:25:13 - The following 1 profile is active: "dev"
+2024-09-09 21:25:13 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-09 21:25:13 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-09 21:25:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-09 21:25:15 - Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interfaces.
+2024-09-09 21:25:16 - BeanFactory id=83565bde-5f0a-31df-9965-c5b98153c454
+2024-09-09 21:25:17 - Tomcat initialized with port(s): 8081 (http)
+2024-09-09 21:25:17 - Starting service [Tomcat]
+2024-09-09 21:25:17 - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2024-09-09 21:25:17 - Initializing Spring embedded WebApplicationContext
+2024-09-09 21:25:17 - Root WebApplicationContext: initialization completed in 3653 ms
+2024-09-09 21:25:17 - HikariPool-1 - Starting...
+2024-09-09 21:25:17 - HikariPool-1 - Start completed.
+2024-09-09 21:25:17 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-09-09 21:25:18 - Set default schema name to PUBLIC
+2024-09-09 21:25:18 - Successfully acquired change log lock
+2024-09-09 21:25:18 - Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2024-09-09 21:25:18 - Reading from PUBLIC.DATABASECHANGELOG
+2024-09-09 21:25:18 - Custom SQL executed
+2024-09-09 21:25:18 - ChangeSet db/create_product_table.sql::raw::includeAll ran successfully in 17ms
+2024-09-09 21:25:18 - Custom SQL executed
+2024-09-09 21:25:18 - ChangeSet db/insert_product_table.sql::raw::includeAll ran successfully in 5ms
+2024-09-09 21:25:18 - Successfully released change log lock
+2024-09-09 21:25:19 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-09 21:25:19 - HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-09-09 21:25:19 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-09-09 21:25:19 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2024-09-09 21:25:20 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-09-09 21:25:20 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-09 21:25:21 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-09 21:25:21 - LiveReload server is running on port 35729
+2024-09-09 21:25:22 - Tomcat started on port(s): 8081 (http) with context path ''
+2024-09-09 21:25:22 - Tomcat initialized with port(s): 9000 (http)
+2024-09-09 21:25:22 - Starting service [Tomcat]
+2024-09-09 21:25:22 - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2024-09-09 21:25:22 - Initializing Spring embedded WebApplicationContext
+2024-09-09 21:25:22 - Root WebApplicationContext: initialization completed in 201 ms
+2024-09-09 21:25:22 - Exposing 17 endpoint(s) beneath base path '/actuator'
+2024-09-09 21:25:22 - Tomcat started on port(s): 9000 (http) with context path ''
+2024-09-09 21:25:23 - Started ProductServiceApplication in 10.657 seconds (JVM running for 11.943)
+2024-09-09 21:30:01 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-09 21:30:01 - HikariPool-1 - Shutdown initiated...
+2024-09-09 21:30:01 - HikariPool-1 - Shutdown completed.
+2024-09-09 21:30:07 - Starting InventoryServiceApplication using Java 20.0.2 on Ayushi with PID 23948 (D:\Ayushi\Learnings\RTB1\Inventory-Management\target\classes started by Ayushi in D:\Ayushi\Learnings\RTB1\Inventory-Management)
+2024-09-09 21:30:07 - The following 1 profile is active: "dev"
+2024-09-09 21:30:07 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-09 21:30:07 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-09 21:30:09 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-09 21:30:09 - Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interfaces.
+2024-09-09 21:30:10 - BeanFactory id=0777f2a3-c045-3541-9353-690d90ca9666
+2024-09-09 21:30:11 - Tomcat initialized with port(s): 8081 (http)
+2024-09-09 21:30:11 - Starting service [Tomcat]
+2024-09-09 21:30:11 - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2024-09-09 21:30:11 - Initializing Spring embedded WebApplicationContext
+2024-09-09 21:30:11 - Root WebApplicationContext: initialization completed in 3396 ms
+2024-09-09 21:30:11 - HikariPool-1 - Starting...
+2024-09-09 21:30:11 - HikariPool-1 - Start completed.
+2024-09-09 21:30:11 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-09-09 21:30:12 - Set default schema name to PUBLIC
+2024-09-09 21:30:12 - Successfully acquired change log lock
+2024-09-09 21:30:12 - Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2024-09-09 21:30:12 - Reading from PUBLIC.DATABASECHANGELOG
+2024-09-09 21:30:12 - Custom SQL executed
+2024-09-09 21:30:12 - ChangeSet db/create_product_table.sql::raw::includeAll ran successfully in 14ms
+2024-09-09 21:30:12 - Custom SQL executed
+2024-09-09 21:30:12 - ChangeSet db/insert_product_table.sql::raw::includeAll ran successfully in 7ms

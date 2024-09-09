@@ -1,4 +1,4 @@
-package global.ecommerce.payment.config;
+package global.ecommerce.inventory.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;

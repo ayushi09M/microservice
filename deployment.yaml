@@ -1,23 +1,23 @@
 apiVersion: "apps/v1"
 kind: StatefulSet
 metadata:
-  name: "paymentservice"
+  name: "productService"
   namespace: "rtb"
   labels:
-    app: "paymentservice"
+    app: "productService"
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: "paymentservice"
+      app: "productService"
   template:
     metadata:
       labels:
-        app: "paymentservice"
+        app: "productService"
     spec:
       containers:
-        - name: "paymentservice-1"
-          image: "gcr.io/gcp-rtb-429519/paymentservice:latest"
+        - name: "productService-1"
+          image: "gcr.io/gcp-rtb-429519/productService:latest"
           ports:
             - containerPort: 8083
           env:
@@ -27,16 +27,16 @@ spec:
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "paymentservice-svc"
+  name: "productService-svc"
   namespace: "rtb"
 spec:
   #type: "ClusterIP"
   type: "NodePort"
   selector:
-    app: "paymentservice"
+    app: "productService"
   ports:
     - protocol: "TCP"
       port: 80
       targetPort: 8083
-      nodePort: 30063
+      nodePort: 30061
       
