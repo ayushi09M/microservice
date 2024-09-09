@@ -1,23 +1,23 @@
 apiVersion: "apps/v1"
 kind: StatefulSet
 metadata:
-  name: "productService"
+  name: "productservice"
   namespace: "rtb"
   labels:
-    app: "productService"
+    app: "productservice"
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: "productService"
+      app: "productservice"
   template:
     metadata:
       labels:
-        app: "productService"
+        app: "productservice"
     spec:
       containers:
-        - name: "productService-1"
-          image: "gcr.io/gcp-rtb-429519/productService:latest"
+        - name: "productservice-1"
+          image: "gcr.io/gcp-rtb-429519/productservice:latest"
           ports:
             - containerPort: 8083
           env:
@@ -27,13 +27,13 @@ spec:
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "productService-svc"
+  name: "productservice-svc"
   namespace: "rtb"
 spec:
   #type: "ClusterIP"
   type: "NodePort"
   selector:
-    app: "productService"
+    app: "productservice"
   ports:
     - protocol: "TCP"
       port: 80
