@@ -34,8 +34,9 @@ public class ProductController {
     }
 
     @PutMapping("/update")
-    public void updateProduct(@RequestParam String name, @RequestParam int quantity) {
+    public String updateProduct(@RequestParam String name, @RequestParam int quantity) {
         log.info("Received request to update product: {} with quantity: {}", name, quantity);
         service.updateProductQuantity(name, quantity);
+        return "Product Updated Successfully";
     }
 }
