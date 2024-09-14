@@ -1,5 +1,5 @@
 apiVersion: "apps/v1"
-kind: StatefulSet
+kind: "StatefulSet"
 metadata:
   name: "productservice"
   namespace: "rtb"
@@ -21,14 +21,27 @@ spec:
           ports:
             - containerPort: 8083
           env:
-            - name: SPRING_PROFILES_ACTIVE
+            - name: "SPRING_PROFILES_ACTIVE"
               value: "prod"
+          volumeMounts:
+            - name: "productservice-storage"
+              mountPath: "/data"
+  volumeClaimTemplates:
+    - metadata:
+        name: "productservice-storage"
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 10Gi
 ---
 apiVersion: "v1"
 kind: "Service"
 metadata:
   name: "productservice-svc"
   namespace: "rtb"
+  labels:
+    app: "productservice"
 spec:
   #type: "ClusterIP"
   type: "NodePort"
@@ -39,4 +52,46 @@ spec:
       port: 80
       targetPort: 8083
       nodePort: 30061
-      
+---
+apiVersion: "autoscaling/v2"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "productservice-hpa"
+  namespace: "rtb"
+  labels:
+    app: "productservice"
+spec:
+  scaleTargetRef:
+    apiVersion: "apps/v1"
+    kind: "StatefulSet"
+    name: "productservice"
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        target:
+          type: "Utilization"
+          averageUtilization: 50
+---
+apiVersion: "autoscaling/v1"
+kind: "ClusterAutoscaler"
+metadata:
+  name: "cluster-autoscaler"
+  namespace: "rtb"
+  labels:
+    app: "productservice"
+spec:
+  scaleDown:
+    enabled: "true"
+    delayAfterAdd: 10m
+    delayAfterDelete: 10s
+    delayAfterFailure: 3m
+  scaleUp:
+    enabled: "true"
+    delayAfterAdd: 10s
+    delayAfterDelete: 10s
+    delayAfterFailure: 3m
+  minNodes: 1
+  maxNodes: 10
