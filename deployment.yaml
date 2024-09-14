@@ -33,7 +33,7 @@ spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
-            storage: 10Gi
+            storage: 5Gi
 ---
 apiVersion: "v1"
 kind: "Service"
@@ -74,24 +74,3 @@ spec:
         target:
           type: "Utilization"
           averageUtilization: 50
----
-apiVersion: "autoscaling/v1"
-kind: "ClusterAutoscaler"
-metadata:
-  name: "cluster-autoscaler"
-  namespace: "rtb"
-  labels:
-    app: "productservice"
-spec:
-  scaleDown:
-    enabled: "true"
-    delayAfterAdd: 10m
-    delayAfterDelete: 10s
-    delayAfterFailure: 3m
-  scaleUp:
-    enabled: "true"
-    delayAfterAdd: 10s
-    delayAfterDelete: 10s
-    delayAfterFailure: 3m
-  minNodes: 1
-  maxNodes: 10
