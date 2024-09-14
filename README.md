@@ -1,4 +1,4 @@
-# Java 
+# MicroserviceOnK8sCluster
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/learntocode3/java.git
+git remote add origin https://gitlab.com/learntocode3/microserviceonk8scluster.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/learntocode3/java/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/learntocode3/microserviceonk8scluster/-/settings/integrations)
 
 ## Collaborate with your team
 

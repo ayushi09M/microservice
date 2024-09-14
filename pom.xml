@@ -13,7 +13,7 @@
     <groupId>RTB-demo</groupId>
     <artifactId>PaymentService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Inventory Management</name>
+    <name>Payment Management</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
