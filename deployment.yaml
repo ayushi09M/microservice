@@ -1,5 +1,5 @@
 apiVersion: "apps/v1"
-kind: StatefulSet
+kind: "StatefulSet"
 metadata:
   name: "paymentservice"
   namespace: "rtb"
@@ -21,14 +21,31 @@ spec:
           ports:
             - containerPort: 8083
           env:
-            - name: SPRING_PROFILES_ACTIVE
+            - name: "SPRING_PROFILES_ACTIVE"
               value: "prod"
+          volumeMounts:
+            - name: "paymentservice-storage"
+              mountPath: "/data"
+  volumeClaimTemplates:
+    - metadata:
+        name: "paymentservice-storage"
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 5Gi
+  updateStrategy:
+    type: "RollingUpdate"
+    rollingUpdate:
+      partition: 0
 ---
 apiVersion: "v1"
 kind: "Service"
 metadata:
   name: "paymentservice-svc"
   namespace: "rtb"
+  labels:
+    app: "paymentservice"
 spec:
   #type: "ClusterIP"
   type: "NodePort"
@@ -38,5 +55,48 @@ spec:
     - protocol: "TCP"
       port: 80
       targetPort: 8083
-      nodePort: 30063
-      
+      nodePort: 30062
+---
+apiVersion: "autoscaling/v2"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "paymentservice-hpa"
+  namespace: "rtb"
+  labels:
+    app: "paymentservice"
+spec:
+  scaleTargetRef:
+    apiVersion: "apps/v1"
+    kind: "StatefulSet"
+    name: "paymentservice"
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        target:
+          type: "Utilization"
+          averageUtilization: 50
+---
+apiVersion: "autoscaling/v2"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "paymentservice-hpa"
+  namespace: "rtb"
+  labels:
+    app: "paymentservice"
+spec:
+  scaleTargetRef:
+    apiVersion: "apps/v1"
+    kind: "StatefulSet"
+    name: "paymentservice"
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        target:
+          type: "Utilization"
+          averageUtilization: 50
